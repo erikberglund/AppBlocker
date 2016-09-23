@@ -6,7 +6,7 @@ Block applications by their bundle identifier from launching in the Finder
 _As the blocking is done by the bundle identifier, the location or name of the application bundle doesn't matter_
 
 # Disclaimer
-This method doesn't "block" the execution of the application, it just gets notified when an application is about to be launched, and sends a SIGKILL to the process that's being launched.
+This script doesn't literally "block" the execution of an application, it just gets notified when an application is about to be launched, and sends a SIGKILL to the process being launched.
 
 It's a simple method to help administrators stop their users from using applications their organization has decided should not be allowed. If you have a management framework with a similar feature, you should use that instead.
 
