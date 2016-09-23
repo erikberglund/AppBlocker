@@ -14,7 +14,7 @@ For more powerful blacklisting of binary execution, look at Google's Santa proje
 
 # Configure Applications
  
- Add the bundle identifier for each application you wish to block to the list 'blockedBundleIdentifiers'
+ Add the bundle identifier for each application you wish to block to the list *blockedBundleIdentifiers*
  
  ```python
  blockedBundleIdentifiers = ['com.apple.InstallAssistant.Sierra']
