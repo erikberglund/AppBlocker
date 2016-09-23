@@ -1,12 +1,16 @@
 # AppBlocker
-Blocks applications by their bundle identifier from launching in the Finder
+Block applications by their bundle identifier from launching in the Finder
 
 ![AppBlocker](https://github.com/erikberglund/AppBlocker/blob/master/AppBlockerScreenshot.png)
 
 _As the blocking is done by the bundle identifier, the location or name of the application bundle doesn't matter_
 
 # Disclaimer
-This is a simple method to help administrators stop their users from launching applications their organization has decided should not be allowed. If you have a management framework with a similar feature, you should use that instead.
+This method doesn't "block" the execution of the application, it just gets notified when an application is about to be launched, and sends a SIGKILL to the process that's being launched.
+
+It's a simple method to help administrators stop their users from using applications their organization has decided should not be allowed. If you have a management framework with a similar feature, you should use that instead.
+
+For more powerful blacklisting of binary execution, look at Google's Santa project: https://github.com/google/santa
 
 # Configure Applications
  
