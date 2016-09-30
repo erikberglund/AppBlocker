@@ -37,4 +37,8 @@ alertMessage = "The application \"{appname}\" has been blocked by IT"
 alertInformativeText = "Contact your administrator for more information"
  ```
  
- Changing icon for the alert is not currently in the script, but could easily be added when creating the alert [#L55](https://github.com/erikberglund/AppBlocker/blob/master/AppBlocker.py#L55).
+ To change the icon shown in the alert, modify the **alertIconPath**
+ 
+ ```python
+ alertIconPath = "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Actions.icns"
+ ```
