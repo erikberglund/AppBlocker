@@ -6,11 +6,11 @@ Block applications by their bundle identifier from launching in the Finder
 _Because the blocking is done by the bundle identifier, the location or name of the application bundle doesn't matter_
 
 # Disclaimer
+For true blacklisting of binary execution, look at Google's Santa project: https://github.com/google/santa
+
 This script doesn't literally "block" the execution of an application, it gets notified when an application is being launched and sends a `SIGKILL` signal to the process.
 
 It's a simple method to help administrators stop their users from using applications the organization has decided should not be allowed. If you have a management framework with a similar feature, you should use that instead.
-
-For more powerful blacklisting of binary execution, look at Google's Santa project: https://github.com/google/santa
 
 # Configure Applications
  
