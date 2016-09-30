@@ -16,6 +16,8 @@ alertUser = True
 alertMessage = "The application \"{appname}\" has been blocked by IT"
 alertInformativeText = "Contact your administrator for more information"
 
+# Use a custom Icon for the alert. If none is defined here, the Python rocketship will be shown.
+alertIconPath = "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/Actions.icns"
 
 # Define callback for notification
 class AppLaunch(NSObject):
@@ -60,6 +62,10 @@ class Alert(object):
 		for button in self.buttons:
 			alert.addButtonWithTitle_(button)
 
+		if os.path.exists(alertIconPath):
+			icon = NSImage.alloc().initWithContentsOfFile_(alertIconPath)
+			alert.setIcon_(icon)
+
 		# Don't show the Python rocketship in the dock
 		NSApp.setActivationPolicy_(1)
 
@@ -67,7 +73,7 @@ class Alert(object):
 		alert.runModal()
 
 # Define an alert
-def alert(message="Default Message", info_text="", buttons=["OK"]):    
+def alert(message="Default Message", info_text="", buttons=["OK"]):	   
 	ap = Alert(message)
 	ap.informativeText = info_text
 	ap.buttons = buttons
