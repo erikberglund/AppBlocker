@@ -10,8 +10,8 @@ from PyObjCTools import AppHelper
 # List of all blocked bundle identifiers. Can use regexes.
 blockedBundleIdentifiers = ['com.apple.InstallAssistant.Sierra']
 
-# Whether the blocked application should be deleted
-deleteBlockedApplication = True
+# Whether the blocked application should be deleted if launched
+deleteBlockedApplication = False
 
 # Whether the user should be alerted that the launched applicaion was blocked
 alertUser = True
