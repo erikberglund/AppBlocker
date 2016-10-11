@@ -3,11 +3,15 @@ import signal
 import re
 import os
 import sys
+import shutil
 from AppKit import *
 from PyObjCTools import AppHelper
 
 # List of all blocked bundle identifiers. Can use regexes.
 blockedBundleIdentifiers = ['com.apple.InstallAssistant.Sierra']
+
+# Whether the blocked application should be deleted
+deleteBlockedApplication = True
 
 # Whether the user should be alerted that the launched applicaion was blocked
 alertUser = True
@@ -44,6 +48,12 @@ class AppLaunch(NSObject):
 			# Alert user
 			if alertUser:
 				alert(alertMessage.format(appname=userInfo()['NSApplicationName']), alertInformativeText, ["OK"])
+
+			if deleteBlockedApplication:
+				try:
+					shutil.rmtree(path)
+				except OSError, e:
+					print ("Error: %s - %s." % (e.filename,e.strerror))
 
 # Define alert class
 class Alert(object):
