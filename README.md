@@ -22,6 +22,12 @@ It's a simple method to help administrators stop their users from using applicat
  
  You can use either exact bundle identifiers or a regex pattern.
  
+ If you also want to delete the application when it's launched, set **deleteBlockedApplication** to True
+ 
+ ```python
+ deleteBlockedApplication = True
+ ```
+ 
 # Configure Alert Message
  
  To disable the alert shown to users, set variable **alertUser** to False
